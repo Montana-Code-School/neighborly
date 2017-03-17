@@ -14,7 +14,7 @@ On the front end it is a lightweight social media type application that allows p
 
 # The Team
 ## Cackie
- * The leagal writer turned professional programmer
+ * The legal writer turned professional programmer
 
 
 ## Alex
