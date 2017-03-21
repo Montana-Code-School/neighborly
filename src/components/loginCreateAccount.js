@@ -42,6 +42,8 @@ class LoginCreateAccount extends React.Component {
   }
 
   render() {
+    // JSX indenting below needs some clean up. Unfortunately es lint doesn't
+    // help for JSX so you have to do it manually. - Harold
     return (
       <div>
       <div>
