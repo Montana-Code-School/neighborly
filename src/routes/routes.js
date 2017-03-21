@@ -1,4 +1,5 @@
 import express from 'express';
+// Best to use ES6 import consistently instead of require - Harold
 let ItemSchema = ('../../models/itemSchema');
 let UserSchema = ('../../models/userSchema');
 
