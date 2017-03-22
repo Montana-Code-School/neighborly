@@ -10,7 +10,7 @@ import { NavbarHeader, NavbarToggle, NavbarCollapse, NavbarBrand } from 'react-b
 import { LinkContainer } from 'react-router-bootstrap';
 import Account from './components/account';
 import LoginCreateAccount from './components/loginCreateAccount';
-import Browse from './components/browse';
+import Browse from './components/Browse';
 import Activity from './components/activity';
 import Neighbors from './components/myNeighbors';
 import Main from './components/main';

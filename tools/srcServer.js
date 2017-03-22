@@ -27,6 +27,8 @@ let swplRoutes = require('../src/routes/routes');
 const port = 3000;
 const compiler = webpack(config);
 
+app.use(express.static('public'));
+
 app.use(require('webpack-dev-middleware')(compiler, {
   noInfo: true,
   publicPath: config.output.publicPath
@@ -38,7 +40,7 @@ app.use(bodyParser.json());
 app.use(require('webpack-hot-middleware')(compiler));
 
 app.get('/', function(req, res) {
-  res.sendFile(path.join( __dirname, '../src/index.html'));
+  res.sendFile(path.join( __dirname, '../public/index.html'));
 });
 
 
