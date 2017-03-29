@@ -21,10 +21,20 @@ class BrowseTwo extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.componentWillMount = this.componentWillMount.bind(this);
     this.handleFormSubmit = this.handleFormSubmit.bind(this);
+    this.loadItemsFromServer = this.loadItemsFromServer.bind(this);
   }
 
   componentWillMount ()  {
     this.selectedCheckboxes = new Set();
+  }
+  componentDidMount() {
+    this.loadItemsFromServer();
+  }
+
+  loadItemsFromServer() {
+    fetch('/item')
+      .then(function(result) {return result.json();})
+      .then(items=> this.props.itemStore.setItems(items));
   }
 
   toggle() {
@@ -49,7 +59,7 @@ class BrowseTwo extends React.Component {
   render() {
     return(
       <div>
-        <h1><img src="../images/logoSWPL.jpg" style={{width:100, marginTop: -7}} /></h1>
+        <h1><img src="../images/swpl.jpg" style={{width:270, height: 150, marginTop: -7}} /></h1>
         <div>
           <Navbar inverse collapseOnSelect>
             <Navbar.Header>
@@ -61,8 +71,8 @@ class BrowseTwo extends React.Component {
             <Navbar.Collapse>
               <Nav>
                 <LinkContainer to={{pathname: '/'}}><NavItem>Main</NavItem></LinkContainer>
-                {/*<LinkContainer to={{pathname: '/Activity'}}><NavItem>Activity</NavItem></LinkContainer>*/}
-                {/*<LinkContainer to={{pathname: '/MyNeighbors'}}><NavItem>My Neighbors</NavItem></LinkContainer>*/}
+                <LinkContainer to={{pathname: '/Activity'}}><NavItem>Activity</NavItem></LinkContainer>
+                <LinkContainer to={{pathname: '/MyNeighbors'}}><NavItem>My Neighbors</NavItem></LinkContainer>
                 <LinkContainer to={{pathname: '/Login'}}><NavItem>Be Neighborly!</NavItem></LinkContainer>
               </Nav>
               <Nav pullRight className="nav-bar-right"/>
