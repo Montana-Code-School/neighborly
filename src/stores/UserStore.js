@@ -8,6 +8,7 @@ export default class UserStore {
       name: "",
       password: "",
       id: "",
+      neighborhood: "",
       admin: false,
       email: "",
       loginMsg: "",
@@ -17,7 +18,7 @@ export default class UserStore {
     this.LoginUser = this.LoginUser.bind(this);
   }
 
-  NewUser(email, password) {
+  NewUser(email, password, name, neighborhood) {
     fetch('/user', {
       method: 'POST',
       headers: {
@@ -26,7 +27,10 @@ export default class UserStore {
       },
       body: JSON.stringify({
         email: email,
-        password: password
+        password: password,
+        name: name,
+        neighborhood: neighborhood
+
       })
     })
     .then(function(){
@@ -44,7 +48,8 @@ export default class UserStore {
       },
       body: JSON.stringify({
         email: email,
-        password: password
+        password: password,
+        name: name
       })
     })
     .then(function(result) {
@@ -53,7 +58,7 @@ export default class UserStore {
       if (loginCred.success && loginCred.token){
 
         alert ('Login Successful!');
-        browserHistory.push('/');
+        browserHistory.push('/Account');
         this.loggedInUser=true;
         this.email=email;
         this.id = loginCred.id;

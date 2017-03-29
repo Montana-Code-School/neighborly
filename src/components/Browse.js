@@ -78,7 +78,7 @@ class Browse extends React.Component {
     return(
       <div>
       <h1>
-        <img src="../images/logoSWPL.jpg" style={{width:100, marginTop: -7}} />
+        <img src="../images/swpl.jpg" style={{width:100, marginTop: -7}} />
       </h1>
         <div>
           <Navbar inverse collapseOnSelect>
