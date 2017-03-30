@@ -1,1 +1,48 @@
 
+
+.Tron {
+  opacity: inherit;
+  height: 20px;
+}
+
+li {
+  font-size: 20px;
+}
+
+.jumbotron {
+    color: #2c3e50;
+    background: #fff;
+}
+
+body {
+    padding-top: 20px;
+}
+
+
+.navbar-inverse {
+    color: #2c3e50;
+
+}
+
+.navbar-inverse .navbar-fixed-top {
+    color: white;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+  }
+
+.btn {
+    position: absolute;
+    bottom: 25px;
+    right: 20px;
+  }
+
+  .btn-custom {
+        background-color: #a0d468;
+        color: white;
+    }
+
+.browseJumbotron {
+  background-color: #fff;
+}

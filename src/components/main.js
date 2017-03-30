@@ -9,6 +9,7 @@ import { render } from 'react-dom';
 import Browse from './Browse';
 
 
+
 class Main extends React.Component {
 
   constructor() {
@@ -43,6 +44,7 @@ class Main extends React.Component {
             <img style={{width:"100vw", height:"83.5vh", overflow:"hidden"}} src="../images/home.jpg"/>
           </div>
         </div>
+
       </div>
     );
   }
