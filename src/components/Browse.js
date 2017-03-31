@@ -9,7 +9,7 @@ import Checkbox from './Checkbox';
 import PowerTools from './PowerTools';
 import Account from './account';
 import ItemList from './ItemList';
-import { Card, CardBlock, CardTitle, CardText, CardSubtitle, CardHeader, CardColumns, CardImg, Form, FormGroup, FormText, Input, Label, FormFeedback, ClassName, Modal, ModalHeader, ModalBody, ModalFooter, ButtonLabel, ButtonGroup } from "reactstrap";
+import { ButtonLabel, Card, CardBlock, CardTitle, CardText, CardSubtitle, CardHeader, CardColumns, CardImg, ClassName, Form, FormGroup, FormText, Input, Label, FormFeedback,  Modal, ModalHeader, ModalBody, ModalFooter,  ButtonGroup } from "reactstrap";
 
 class Browse extends React.Component {
   constructor(props) {
@@ -82,7 +82,7 @@ class Browse extends React.Component {
             {/*<LinkContainer to={{pathname: '/MyNeighbors'}}><NavItem>   My Neighbors   </NavItem></LinkContainer>*/}
             <LinkContainer to={{pathname: '/Login'}}><NavItem>Login</NavItem></LinkContainer>
           </Nav>
-            <Nav pullRight className="nav-bar-right"/>
+            <Nav pullRight ClassName="nav-bar-right"/>
           </Navbar.Collapse>
           {this.props.children}
         </div>
@@ -90,8 +90,8 @@ class Browse extends React.Component {
           <Grid>
             <Jumbotron style={{ backgroundColor: '#F0F1F5', boxPack: "center" }}>
 
-              <div className="mx-auto">
-                <h1 className="display-4" style={{postion: 'center' }}>Browse the Hoods for the Goods!</h1>
+              <div ClassName="mx-auto">
+                <h1 ClassName="display-4" style={{postion: 'center' }}>Browse the Hoods for the Goods!</h1>
               </div>
 
               <Form>
@@ -103,7 +103,7 @@ class Browse extends React.Component {
                 </FormGroup>
 
                 <FormGroup tag="fieldset" row>
-                  <legend className="col-form-legend col-sm-2">Limit Search</legend>
+                  <legend ClassName="col-form-legend col-sm-2">Limit Search</legend>
 
                   <Col sm={10}>
 
@@ -122,9 +122,9 @@ class Browse extends React.Component {
                   </Col>
                 </FormGroup>
 
-                <FormGroup check row className="d-flex align-items-start">
+                <FormGroup check row ClassName="d-flex align-items-start">
                   <Col sm={{ size: 20, offset: 2 }}>
-                    <Button className="btn btn-success btn-lg">Search</Button>
+                    <Button ClassName="btn btn-success btn-lg">Search</Button>
                    </Col>
                 </FormGroup>
               </Form>
@@ -153,7 +153,7 @@ Browse.propTypes = {
   itemStore: React.PropTypes.object,
   items: React.PropTypes.object,
   user: React.PropTypes.object,
-  className: React.PropTypes.object,
+  ClassName: React.PropTypes.object,
   buttonLabel: React.PropTypes.object
 };
 

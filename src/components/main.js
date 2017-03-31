@@ -30,7 +30,7 @@ class Main extends React.Component {
                   <LinkContainer to={{pathname: '/Browse'}}><NavItem>Browse Items</NavItem></LinkContainer>
                   <LinkContainer to={{pathname: '/Activity'}}><NavItem>Activity</NavItem></LinkContainer>
                   <LinkContainer to={{pathname: '/Account'}}><NavItem>Your Account</NavItem></LinkContainer>
-                  <LinkContainer to={{pathname: '/MyNeighbors'}}><NavItem>   My Neighbors   </NavItem></LinkContainer>
+                  {/*<LinkContainer to={{pathname: '/MyNeighbors'}}><NavItem>   My Neighbors   </NavItem></LinkContainer>*/}
                   <LinkContainer to={{pathname: '/Login'}}><NavItem>Login</NavItem></LinkContainer>
                 </Nav>
               </div>
@@ -41,7 +41,7 @@ class Main extends React.Component {
         {this.props.children}
         <div style={{color:"grey"}}>
           <div>
-            <img style={{width:"100vw", height:"83.5vh", overflow:"hidden"}} src="../images/home.jpg"/>
+            <img style={{width:"100vw", height:"83.5vh", overflow:"hidden"}} src="../images/home-min.jpg"/>
           </div>
         </div>
 
