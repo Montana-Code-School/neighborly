@@ -3,12 +3,10 @@
 let mongoose = require('mongoose');
 
 let ItemSchema = new mongoose.Schema({
-  name: String,
   description: String,
-  owner: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'ItemOwner'
-  }
+  category: String,
+  condition: String,
+  url: String
 });
 
-module.exports = mongoose.model('Item', ItemSchema);
+export default mongoose.model('Item', ItemSchema);

@@ -8,6 +8,7 @@ export default class UserStore {
       name: "",
       password: "",
       id: "",
+      neighborhood: "",
       admin: false,
       email: "",
       loginMsg: "",
@@ -15,10 +16,11 @@ export default class UserStore {
       token: ""
     });
     this.LoginUser = this.LoginUser.bind(this);
+    this.NewUser = this.NewUser.bind(this);
   }
 
-  LoginUser(name, password) {
-    fetch('/api/authenticate', {
+  NewUser(name, email, password, neighborhood) {
+    fetch('/user', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -26,25 +28,43 @@ export default class UserStore {
       },
       body: JSON.stringify({
         name: name,
-        password: password
+        email: email,
+        password: password,
+        neighborhood: neighborhood
+      })
+    })
+    .then(function(){
+      alert ('User Account Created.  Please Log In');
+      browserHistory.push('/Account');
+    });
+  }
+
+  LoginUser(email, password) {
+    fetch('/authenticate', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        email: email,
+        password: password,
       })
     })
     .then(function(result) {
-      console.log(result);
       return result.json();})
     .then(loginCred => {
       if (loginCred.success && loginCred.token){
 
-        alert ('Login Successful!' + loginCred.id);
-        browserHistory.push('/Main');
-        this.loggedInUser=true;
-        this.name=name;
+        browserHistory.push('/');
+        this.loggedInUser = true;
+        this.email = loginCred.email;
+        this.name = loginCred.name;
         this.id = loginCred.id;
         this.token = loginCred.token;
       } else {
-        alert (loginCred.message);
-        this.loggedInUser=false;
-        this.name="";
+        this.loggedInUser = false;
+        this.email = "";
       }
     });
   }
