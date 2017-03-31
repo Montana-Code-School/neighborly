@@ -1,5 +1,5 @@
 import React from 'react';
-import { Navbar, Nav, NavItem, Row, Col, Grid, Jumbotron, Button, Well } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, Row, Col, Grid, Jumbotron, Button,  Well } from 'react-bootstrap';
 import { NavbarHeader, NavbarToggle, NavbarCollapse, NavbarBrand } from 'react-bootstrap/lib/NavbarHeader';
 import { LinkContainer } from 'react-router-bootstrap';
 import { Router, Route, browserHistory, IndexRoute, Link } from 'react-router';
@@ -9,7 +9,7 @@ import Checkbox from './Checkbox';
 import PowerTools from './PowerTools';
 import Account from './account';
 import ItemList from './ItemList';
-import { Card, CardBlock, CardTitle, CardText, CardSubtitle, CardHeader, CardColumns, CardImg, Form, FormGroup, FormText, Input, Label, FormFeedback, ClassName, Modal, ModalHeader, ModalBody, ModalFooter, ButtonLabel, ButtonGroup } from "reactstrap";
+import {  Card, CardBlock, CardTitle, CardText, CardSubtitle, CardHeader, CardColumns, CardImg, Form, FormGroup, FormText, Input, Label, FormFeedback,  Modal, ModalHeader, ModalBody, ModalFooter,  ButtonGroup } from "reactstrap";
 
 class Browse extends React.Component {
   constructor(props) {
@@ -153,8 +153,7 @@ Browse.propTypes = {
   itemStore: React.PropTypes.object,
   items: React.PropTypes.object,
   user: React.PropTypes.object,
-  className: React.PropTypes.object,
-  buttonLabel: React.PropTypes.object
+  className: React.PropTypes.object
 };
 
 export default inject('itemStore', 'userStore')(observer(Browse));
