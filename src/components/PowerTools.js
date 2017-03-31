@@ -10,6 +10,7 @@ class PowerTools extends React.Component {
     };
   }
 
+  // do we still need all this hard coded data ? - Harold
 
   render() {
     return (

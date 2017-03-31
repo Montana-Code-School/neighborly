@@ -4,6 +4,8 @@ import { LinkContainer } from 'react-router-bootstrap';
 import { inject, observer } from 'mobx-react';
 import { Router, Route, browserHistory, IndexRoute, Link } from 'react-router';
 
+/* The file name (HeaderNavigation.js) doesn't match the internal name (Navbar),
+   confusing - Harold */
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -25,7 +27,8 @@ class Navbar extends React.Component {
       <div>
       <link rel="stylesheet" href="../../public/style.css"/>
 
-
+      {/* If you want this to be a Nav, using lowercase nav will fail
+         - Harold */}
       <nav className="navbar navbar-inverse navbar-fixed-top navbar-toggleable-sm">
 
         <div className="container">

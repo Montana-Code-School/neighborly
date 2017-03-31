@@ -6,6 +6,8 @@ import { NavbarHeader, NavbarToggle, NavbarCollapse, NavbarBrand } from 'react-b
 import { LinkContainer } from 'react-router-bootstrap';
 import { Router, Route, browserHistory, IndexRoute, Link } from 'react-router';
 
+// Need to move the NavBar to its own thing, rather than repeating it in every
+// component. -Rachael, Harold
 
 class Activity extends React.Component {
   render() {

@@ -5,6 +5,8 @@ import { Navbar, Nav, NavItem, NavDropdown } from 'react-bootstrap';
 import {NavbarHeader, NavbarToggle, NavbarCollapse, NavbarBrand} from 'react-bootstrap/lib/NavbarHeader';
 import { LinkContainer } from 'react-router-bootstrap';
 
+/* Not good to have your file name, NavBar.js not match internal class name
+   Navigation - Harold*/
 class Navigation extends React.Component {
   constructor(props) {
     super(props);

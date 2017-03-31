@@ -1,5 +1,4 @@
-// since the server is using babel-node - we can use ES6 import
-// instead of require - Harold
+// Change to ES6 (import)- Harold
 let mongoose = require('mongoose');
 
 let UserSchema = new mongoose.Schema({

@@ -11,7 +11,7 @@ import routes from '../src/routes/routes';
 
 let app = express();
 /* eslint-disable no-console */
-let router = express.Router();
+let router = express.Router(); // this isn't used here - delete - Harold
 
 mongoose.Promise = global.Promise;
 

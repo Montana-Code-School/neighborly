@@ -1,3 +1,12 @@
+// Our classes convention around naming React Components has been to capitalize
+// the file names as well as the class. Let's be consistent here, and make
+// account.js be Account.js. Remember to git mv account.js Account.js, or
+// git won't see your name change.
+// Also- I turned on warnings for lines that are too long and variables and
+// imports you don't use (in .eslintrc). It would make your code much healthier
+// to minimize your warnings. This comment is for all your files, not just
+// account. - Harold
+
 import React from 'react';
 import { Navbar, Nav, NavItem, Row, Col, Grid, Image, Thumbnail, Button, Jumbotron } from 'react-bootstrap';
 import { NavbarHeader, NavbarToggle, NavbarCollapse, NavbarBrand } from 'react-bootstrap/lib/NavbarHeader';

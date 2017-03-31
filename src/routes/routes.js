@@ -1,6 +1,7 @@
 import express from 'express';
 import Item from '../../models/itemSchema';
 import User from '../../models/userSchema';
+// please use ES6 imports below - Harold
 let hash = require('password-hash');
 let jwt = require('jsonwebtoken');
 let app = express();
@@ -24,6 +25,7 @@ router.route('/item')
     item.category = req.body.category;
     item.url = req.body.url;
 
+    // item.save's callback function should not have a next parameter - Rachael
     item.save(function(err, item, next) {
       if(err) {
         return next(err);
@@ -34,8 +36,9 @@ router.route('/item')
     });
   })
   .get(function(req, res){
-    Item.find(function(err, item){
+    Item.find(function(err, item){ // Item.find callback needs next param-Harold
       if(err){
+        // This should not be a return, bad things will happen. Do next(err);
         return (err);
       } else {
         res.json(item);
@@ -44,10 +47,10 @@ router.route('/item')
   });
 
 router.route('/item')
-  .get(function(req, res){
+  .get(function(req, res){ // add next param - Harold
     Item.findById(req.params.item._id, function(err, item){
       if(err){
-        console.log(err);
+        console.log(err); // console log here not helpful to user - do next(err)
       } else {
         res.json(item);
       }
@@ -65,6 +68,7 @@ router.route('/user')
     user.neighborhood = req.body.neighborhood;
     user.password = hash.generate(req.body.password);
 
+    // same problems below as your 'item' post route above -  Harold
     user.save(function(err, user, next) {
       if(err) {
         return next(err);
@@ -81,6 +85,7 @@ router.post('/authenticate', function(req, res) {
   User.findOne({
     email: req.body.email
   }, function(err, user) {
+    // the throw err will kill your server - see me about improving - Harold
     if (err) throw err;
 
     if (!user) {

@@ -135,6 +135,7 @@ class Browse extends React.Component {
 
       <div>
         <Grid>
+        {/* avoid inline styling - Rachael */}
           <Jumbotron style={{ backgroundColor: '#D1D5D8' }}>
             <CardColumns>
               <ItemList items={this.props.itemStore.items}/>
