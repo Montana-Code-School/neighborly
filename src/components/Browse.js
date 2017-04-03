@@ -4,6 +4,7 @@ import { inject, observer } from 'mobx-react';
 import ItemList from './ItemList';
 import Navigation from './Navigation';
 import { CardColumns, Form, FormGroup, Input, Label, FormFeedback, ButtonGroup } from "reactstrap";
+import Search from 'react-search';
 
 class Browse extends React.Component {
   constructor(props) {
@@ -17,8 +18,7 @@ class Browse extends React.Component {
     this.toggle = this.toggle.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loadItemsFromServer = this.loadItemsFromServer.bind(this);
-    this.onCheckboxBtnClick = this.onCheckboxBtnClick.bind(this);
-    this.convertToShowItems = this.convertToShowItems.bind(this);
+    this.searchItems = this.searchItems.bind(this);
   }
 
   componentDidMount() {
@@ -52,14 +52,16 @@ class Browse extends React.Component {
     fetch(`/item`)
     .then(function(result) {return result.json();})
     .then(data => this.setState({
-      foundItems: this.convertToShowItems(this.state.category, data.data)}));
-  }
-
-  convertToShowItems() {
-    return this.foundItems.map(items => ({
-      category: items.category,
     }));
   }
+
+  searchItems(items, allItems) {
+    allItems = this.props.itemStore.items;
+    console.log(this.props.itemStore.items);
+    allItems=allItems.filter(i => this.props.itemStore.items.category === i.category);
+    this.props.itemStore.items = allItems;
+  }
+
 
   render() {
     return(
@@ -122,7 +124,7 @@ class Browse extends React.Component {
 
                 <FormGroup check row className="d-flex align-items-start">
                   <Col sm={{ size: 20, offset: 2 }}>
-                    <Button onClick={this.handleSubmit} className="btn btn-success btn-lg">Search
+                    <Button onClick={this.searchItems} className="btn btn-success btn-lg">Search
                     </Button>
                    </Col>
                 </FormGroup>
@@ -136,7 +138,7 @@ class Browse extends React.Component {
             <Jumbotron style={{ backgroundColor: '#D1D5D8' }}>
               <CardColumns>
                 <ItemList items={this.props.itemStore.items}/>
-                <foundItems/>
+  //
               </CardColumns>
             </Jumbotron>
           </Grid>

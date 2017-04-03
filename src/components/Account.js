@@ -21,7 +21,6 @@ class Account extends React.Component {
     this.handleNewItem = this.handleNewItem.bind(this);
   }
 
-
   handleCategoryChange(e) {
     this.setState({category: e.target.value});
   }

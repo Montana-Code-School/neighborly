@@ -13,7 +13,7 @@ class Navigation extends React.Component {
       <div className="navBar navbar-fixed-top">
         <Navbar collapseOnSelect id="nav-margin">
           <Navbar.Header>
-            <Flex align="left" gutter={2} justify="space-between" wrap>
+            <Flex align="center" gutter={2} justify="space-between" wrap>
               <Box col={4} p={2}>
                 <span id="logo"><img src="../images/swpl.jpg" style={{marginTop: -7}} /></span>
               </Box>
