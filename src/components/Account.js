@@ -52,16 +52,15 @@ class Account extends React.Component {
             <Flex align="left">
               <Box>
                 <Media>
-                  <Media left>
-                    <Media style={{width:"35%"}} object src="https://pbs.twimg.com/profile_images/449359188641071104/DlT5LtJI.jpeg" alt="minions!!!!!!"/>
-                  </Media>
+                  <Media style={{width:"2%", paddingRight:"20"}} object src="../images/profile.png"
+                  alt="Profile Picture"/>
                   <Media body>
                     <Media heading>
                       <div>
-                        <h2>Name: {this.props.userStore.name}</h2>
+                        <h2>Name:</h2><h3>{this.props.userStore.name}</h3>
                       </div>
                     </Media>
-                    <h3>Neighborhood: {this.props.userStore.neighborhood}</h3>
+                    <h2>Neighborhood:</h2><h3>{this.props.userStore.neighborhood}</h3>
                   </Media>
                 </Media>
               </Box>

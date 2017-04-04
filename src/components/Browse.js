@@ -3,7 +3,7 @@ import { Col, Grid, Jumbotron, Button } from 'react-bootstrap';
 import { inject, observer } from 'mobx-react';
 import ItemList from './ItemList';
 import Navigation from './Navigation';
-import { CardColumns, Form, FormGroup, Input, Label, FormFeedback, ButtonGroup } from "reactstrap";
+import { CardColumns, Form, FormGroup, Input, Label, FormFeedback } from "reactstrap";
 
 
 class Browse extends React.Component {
@@ -92,45 +92,9 @@ class Browse extends React.Component {
                 <FormGroup  style={{width: "50%"}}>
                   <Label>SEARCH</Label>
                   <Input onChange={this.handleFilterTextInputChange} type="text" state="success"
-                    placeholder="Search the Neighborhood"
+                    placeholder="Power Tools, Gardening, Hobby, Recreation, Kitchen"
                     value={this.state.filterText} />
                   <FormFeedback/>
-                </FormGroup>
-
-                <FormGroup tag="fieldset" row>
-                  <legend className="col-form-legend col-sm-2">Limit Search</legend>
-                  <Col sm={10}>
-
-                    <ButtonGroup>
-
-                      <Button color="primary" onClick={() =>
-                        this.onCheckboxBtnClick("Power Tools")}
-                        active={this.state.cSelected.includes("Power Tools")}>Power Tools
-                      </Button>
-
-                      <Button color="primary" onClick={() =>
-                        this.onCheckboxBtnClick("Hobby")}
-                        active={this.state.cSelected.includes("Hobby")}>Hobby
-                      </Button>
-
-                      <Button color="primary" onClick={() =>
-                        this.onCheckboxBtnClick("Gardening")}
-                        active={this.state.cSelected.includes("Gardening")}>Gardening
-                      </Button>
-
-                      <Button color="primary" onClick={() =>
-                        this.onCheckboxBtnClick("Recreation")}
-                        active={this.state.cSelected.includes("Recreation")}>Recreation
-                      </Button>
-
-                      <Button color="primary" onClick={() =>
-                        this.onCheckboxBtnClick("Kitchen")}
-                        active={this.state.cSelected.includes("Kitchen")}>Kitchen
-                      </Button>
-
-                    </ButtonGroup>
-
-                  </Col>
                 </FormGroup>
 
                 <FormGroup check row className="d-flex align-items-start">
